@@ -13,7 +13,7 @@ export default function ContactPage({ ready }) {
         path="/contact"
         title="Contact & Directions | Maliyakal Homestay, Nayarambalam"
         description="Call, WhatsApp or email Maliyakal Homestay, Maliyakal House, Near Punchepalam, Nayarambalam P.O., Ernakulam, Kerala 682509. Get directions on Google Maps."
-        image="/imgg2.webp"
+        image="/imgg1.webp"
       />
       <PageHero
         ready={ready}

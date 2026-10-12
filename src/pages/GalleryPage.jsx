@@ -9,7 +9,6 @@ import { EASE, fadeUp, inView, stagger } from '../lib/motion'
 /* Only real photographs of Maliyakal Homestay and its surroundings. */
 const PHOTOS = [
   { src: '/imgg1.webp', w: 1360, h: 907, cat: 'Exterior', title: 'Entrance gate and garden path', alt: 'Maliyakal Homestay entrance with blue gates, red tiled roofs and a stone-paved garden path' },
-  { src: '/imgg2.webp', w: 765, h: 1020, cat: 'Exterior', title: 'Carved wooden balcony', alt: 'Maliyakal Homestay front with its carved wooden balcony and red tiled roof' },
   { src: '/imgg4.webp', w: 1360, h: 941, cat: 'Interiors', title: 'Air-conditioned double room', alt: 'Air-conditioned double room at Maliyakal Homestay with a double bed and warm lighting' },
   { src: '/img5.webp', w: 1360, h: 907, cat: 'Interiors', title: 'Living and dining area', alt: 'Living and dining area at Maliyakal Homestay with wooden furniture' },
   { src: '/imgg3.webp', w: 1360, h: 907, cat: 'Interiors', title: 'Living room and staircase', alt: 'Living room at Maliyakal Homestay with a sofa and a feature staircase' },
@@ -134,9 +133,9 @@ export default function GalleryPage({ ready }) {
         title="Glimpses of"
         accent="Maliyakal"
         lead="A look at the house, the room and the quiet village life of Nayarambalam, Vypin Island."
-        img="/imgg2.webp"
-        alt="Maliyakal Homestay front with its carved wooden balcony and red tiled roof"
-        position="center 30%"
+        img="/imgg1.webp"
+        alt="Maliyakal Homestay entrance with blue gates, red tiled roofs and a stone-paved garden path"
+        position="center 40%"
       />
 
       <section className="section gallery" aria-labelledby="gallery-title">
