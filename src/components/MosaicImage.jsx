@@ -4,30 +4,58 @@ import { useReducedMotion } from 'framer-motion'
 /* 3x3 staggered clip-path mosaic reveal (triggered once when scrolled into view). */
 export default function MosaicImage({ src, alt, ratio = '4 / 5', className = '', position = 'center' }) {
   const reduce = useReducedMotion()
+  const [inViewport, setInViewport] = useState(false)
+  const [loaded, setLoaded] = useState(false)
   const [visible, setVisible] = useState(false)
   const [done, setDone] = useState(false)
   const ref = useRef(null)
 
+  /* Preload so the tiles never animate in empty (uncached images would otherwise just pop in). */
   useEffect(() => {
     if (reduce) return undefined
-    let timer
+    let cancelled = false
+    const img = new Image()
+    const finish = () => !cancelled && setLoaded(true)
+    img.onload = finish
+    img.onerror = finish
+    img.src = src
+    if (img.complete) finish()
+    return () => {
+      cancelled = true
+    }
+  }, [src, reduce])
+
+  useEffect(() => {
+    if (reduce) return undefined
     const el = ref.current
     const obs = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setVisible(true)
-          timer = setTimeout(() => setDone(true), 1900)
+          setInViewport(true)
           obs.disconnect()
         }
       },
       { threshold: 0.2 },
     )
     if (el) obs.observe(el)
+    return () => obs.disconnect()
+  }, [reduce])
+
+  useEffect(() => {
+    if (!inViewport || !loaded) return undefined
+    let timer
+    /* Two frames so the collapsed clip-paths are painted before transitioning open. */
+    const raf = requestAnimationFrame(() =>
+      requestAnimationFrame(() => {
+        setVisible(true)
+        timer = setTimeout(() => setDone(true), 1900)
+      }),
+    )
     return () => {
-      obs.disconnect()
+      cancelAnimationFrame(raf)
       clearTimeout(timer)
     }
-  }, [reduce])
+  }, [inViewport, loaded])
 
   const masks = useMemo(() => {
     const list = []

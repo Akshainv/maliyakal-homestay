@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import MosaicImage from './MosaicImage'
 import ScrollWords from './ScrollWords'
+import ParallaxBg from './ParallaxBg'
 import { fadeUp, inView, stagger } from '../lib/motion'
 
 export default function AboutSection() {
@@ -33,16 +34,18 @@ export default function AboutSection() {
 
           <motion.div className="about__media" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: '-80px' }} transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}>
             <MosaicImage
-              src="/imgg2.webp"
-              alt="Maliyakal Homestay entrance with its carved wooden balcony and red tiled roof"
-              ratio="3 / 4"
+              src="/about-us.jpeg"
+              alt="Maliyakal Homestay, a two-storey Kerala-style house with red tiled roofs, a carved wooden balcony and a stone-paved courtyard among coconut palms"
+              ratio="1 / 1"
+              position="58% center"
             />
           </motion.div>
         </div>
       </section>
 
-      <section className="section statement" aria-label="Village life at Maliyakal">
-        <div className="container container--narrow">
+      <section className="section statement statement--banner" aria-label="Village life at Maliyakal">
+        <ParallaxBg src="/scn2-banner.jpg" position="center 60%" overlay="dark" />
+        <div className="container container--narrow statement__inner">
           <ScrollWords text="Surrounded by lush greenery, quiet canals, sacred groves, and the charm of everyday village life, our homestay invites you to step away from the rush of the city and enjoy a more relaxed way of travelling." />
         </div>
       </section>

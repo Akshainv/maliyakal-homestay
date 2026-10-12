@@ -2,10 +2,12 @@ import { motion } from 'framer-motion'
 import { MessageCircle } from 'lucide-react'
 import { WA_GENERAL } from '../lib/site'
 import { fadeUp, inView, stagger } from '../lib/motion'
+import ParallaxBg from './ParallaxBg'
 
 export default function EnquirySection() {
   return (
     <section id="enquiry" className="section enquiry" aria-labelledby="enquiry-title">
+      <ParallaxBg src="/scn1-banner.jpg" position="center 70%" overlay="green" />
       <svg className="enquiry__deco" viewBox="0 0 400 400" fill="none" stroke="currentColor" strokeWidth="1" aria-hidden="true">
         <circle cx="200" cy="200" r="190" />
         <circle cx="200" cy="200" r="140" />

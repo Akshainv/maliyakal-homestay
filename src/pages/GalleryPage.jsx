@@ -15,8 +15,15 @@ const PHOTOS = [
   { src: '/imgg3.webp', w: 1360, h: 907, cat: 'Interiors', title: 'Living room and staircase', alt: 'Living room at Maliyakal Homestay with a sofa and a feature staircase' },
   { src: '/imgg6.webp', w: 1360, h: 907, cat: 'Surroundings', title: 'Vypin backwaters', alt: 'Chinese fishing net and boat on the backwaters near Maliyakal Homestay' },
   { src: '/imgg7.webp', w: 765, h: 1020, cat: 'Surroundings', title: 'Village lane, Nayarambalam', alt: 'A quiet village lane lined with coconut palms in Nayarambalam' },
+  { src: '/gall3.jpeg', w: 609, h: 773, cat: 'Guests', title: 'A family visit', alt: 'A group of guests standing with the hosts in front of Maliyakal Homestay and its carved wooden balcony' },
+  { src: '/gall1.jpeg', w: 484, h: 859, cat: 'Guests', title: 'Guests from abroad', alt: 'Two international guests smiling with the hosts on the stone garden path at Maliyakal Homestay' },
+  { src: '/gall2.jpeg', w: 610, h: 1217, cat: 'Guests', title: 'Friends at Maliyakal', alt: 'Four guests and hosts standing beneath the red tiled roof and carved balcony of Maliyakal Homestay' },
+  { src: '/gall4.jpeg', w: 610, h: 800, cat: 'Guests', title: 'Part of the family', alt: 'Guests standing arm in arm with the host family in the courtyard of Maliyakal Homestay' },
+  { src: '/gall5.jpeg', w: 610, h: 1078, cat: 'Guests', title: 'Backpackers checking out', alt: 'A family of backpackers with the host in front of Maliyakal Homestay' },
+  { src: '/gall6.jpeg', w: 610, h: 812, cat: 'Guests', title: 'Warm goodbyes', alt: 'Two guests with the hosts at the front verandah of Maliyakal Homestay' },
+  { src: '/gall7.jpeg', w: 722, h: 1276, cat: 'Guests', title: 'Happy travellers', alt: 'The host smiling with two visiting travellers' },
 ]
-const FILTERS = ['All', 'Exterior', 'Interiors', 'Surroundings']
+const FILTERS = ['All', 'Exterior', 'Interiors', 'Surroundings', 'Guests']
 
 function Lightbox({ photos, index, onClose, onChange }) {
   const closeRef = useRef(null)
